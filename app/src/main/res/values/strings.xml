@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My_HuanDog</string>
+    <string name="Last_Walk">마지막 산책</string>
+    <!--마이페이지-->
+    <string name="My_Info">내 정보</string>
+    <string name="My_Dogs">내 강아지</string>
+    <string name="My_Gaol">목표 설정</string>
+    <string name="My_Feedback">피드백</string>
+    <string name="My_Withdraw">회원 탈퇴</string>
+</resources>

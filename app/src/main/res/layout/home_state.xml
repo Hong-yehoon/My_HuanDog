@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="2dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/main_state_bg_color"
+
+        >
+        <TextView
+            android:id="@+id/text_goal"
+            android:layout_marginLeft="40dp"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:text="1,300 m"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/text_noti_goal"
+            android:layout_below="@+id/text_goal"
+            android:layout_marginLeft="40dp"
+            android:layout_width="180dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:text="목표까지 200m 남았어요"
+            android:gravity="center"
+            />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_main_goal"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/text_goal"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_goal"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="-113dp"
+            android:background="@color/main_state_bg_color"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/imv02"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/ic_state_harness"
+
+                />
+
+            <TextView
+                android:id="@+id/lastWalk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imv02"
+                android:text="@string/Last_Walk"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lastDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lastWalk"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/imv02"
+                android:text="2021년 02월 01일"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/lastTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lastWalk"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/lastDay"
+                android:text="기록 없음"
+                android:textSize="18dp" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
