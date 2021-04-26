@@ -28,11 +28,15 @@
     <Button
         android:id="@+id/start_fabBtn"
         android:layout_width="70dp"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp"
-        android:background="@color/basicBtn"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="@color/basicBtn"
+        android:text="START"
+        android:textColor="@color/white"
+        android:background="@drawable/startbtn"
         >
 
     </Button>

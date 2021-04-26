@@ -15,6 +15,7 @@
        app:menu="@menu/bottom_nav_menu"
        app:labelVisibilityMode="labeled"
        app:itemBackground="@color/white"
+
        />
 
 </FrameLayout>

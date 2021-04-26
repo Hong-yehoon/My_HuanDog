@@ -111,7 +111,6 @@ public class StartActivity extends AppCompatActivity {
                         walkDay = simpleDate.format(mDate);
                         walkTime = time.getText().toString();
 
-
                         helper.insertTime(sqlDB, walkTime, walkDay);
                         sqlDB.close();
                         timeThread.interrupt();
@@ -135,13 +134,13 @@ public class StartActivity extends AppCompatActivity {
 
         @Override
         public void handleMessage(Message msg) {
-            int mSec = msg.arg1 % 100;
+            //int mSec = msg.arg1 % 100;
             int sec = (msg.arg1 / 100) % 60;
             int min = (msg.arg1 / 100) / 60;
             int hour = (msg.arg1 / 100) / 360;
             //1000이 1초 1000*60 은 1분 1000*60*10은 10분 1000*60*60은 한시간
 
-            @SuppressLint("DefaultLocale") String result = String.format("%02d:%02d:%02d:%02d", hour, min, sec,mSec);
+            @SuppressLint("DefaultLocale") String result = String.format("%02d:%02d:%02d", hour, min, sec);
             time.setText(result);
 
 
@@ -167,7 +166,7 @@ public class StartActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 time.setText("");
-                                time.setText("00:00:00:00");
+                                time.setText("00:00:00");
                             }
                         });
                         return; // 인터럽트 받을 경우 return
