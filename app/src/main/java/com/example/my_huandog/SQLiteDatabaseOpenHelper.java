@@ -27,8 +27,8 @@ public class SQLiteDatabaseOpenHelper extends android.database.sqlite.SQLiteOpen
     }
     public void createTableTime (SQLiteDatabase db){
         String sql = "CREATE TABLE if not exists " + table+"(" +
-                "walkTime text," +
-                "walkDay text)";
+                "walkTime int ," +
+                "walkDay date)";
         try{
             db.execSQL(sql);
         }catch(SQLException e){
@@ -36,7 +36,7 @@ public class SQLiteDatabaseOpenHelper extends android.database.sqlite.SQLiteOpen
         }
     }
 
-    public void insertTime (SQLiteDatabase db,String walkTime, String walkDay){
+    public void insertTime (SQLiteDatabase db, int walkTime, String walkDay){
         db.beginTransaction();
 
         try{

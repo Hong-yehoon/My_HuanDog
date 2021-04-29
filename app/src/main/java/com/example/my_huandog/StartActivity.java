@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -39,6 +40,8 @@ public class StartActivity extends AppCompatActivity {
     String walkTime, walkDay;
 
     Intent intent;
+
+    int sec, min, hour, time_result;
 
 
     @Override
@@ -108,13 +111,13 @@ public class StartActivity extends AppCompatActivity {
                         Date mDate = new Date(now);
                         SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy"+"년"+"MM"+"월"+"dd"+"일");
 
-                        walkDay = simpleDate.format(mDate);
-                        walkTime = time.getText().toString();
 
-                        helper.insertTime(sqlDB, walkTime, walkDay);
+                        walkDay = simpleDate.format(mDate);
+                        //walkTime = time.getText().toString();
+
+                        helper.insertTime(sqlDB, time_result, walkDay);
                         sqlDB.close();
                         timeThread.interrupt();
-
 
                         startActivity(intent);
                         finish();
@@ -135,12 +138,14 @@ public class StartActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             //int mSec = msg.arg1 % 100;
-            int sec = (msg.arg1 / 100) % 60;
-            int min = (msg.arg1 / 100) / 60;
-            int hour = (msg.arg1 / 100) / 360;
+            sec = (msg.arg1 / 100) % 60;
+            min = (msg.arg1 / 100) / 60;
+            hour = (msg.arg1 / 100) / 360;
             //1000이 1초 1000*60 은 1분 1000*60*10은 10분 1000*60*60은 한시간
 
             @SuppressLint("DefaultLocale") String result = String.format("%02d:%02d:%02d", hour, min, sec);
+            time_result = sec+(min*60);
+            //Log.w("test",""+time_result);
             time.setText(result);
 
 
@@ -159,7 +164,7 @@ public class StartActivity extends AppCompatActivity {
                     handler.sendMessage(msg);
 
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(1);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                         runOnUiThread(new Runnable() {
@@ -174,6 +179,5 @@ public class StartActivity extends AppCompatActivity {
                 }
             }
         }
-
     }
 }

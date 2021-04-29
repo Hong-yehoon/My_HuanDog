@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="230dp"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/round_layout"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="본인확인을 위해 정보를 입력해주세요"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/DeEmail"
+        android:layout_marginTop="20dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="가입한 이메일"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        />
+    <EditText
+        android:id="@+id/DePass"
+        android:layout_marginTop="10dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        />
+
+    <Button
+        android:id="@+id/DeBtn"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="입력"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/basicBtn"
+        android:textColor="@color/white"
+        />
+
+
+</LinearLayout>
