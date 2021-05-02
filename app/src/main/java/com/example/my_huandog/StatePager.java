@@ -30,6 +30,7 @@ import com.google.android.material.timepicker.TimeFormat;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 
 
@@ -65,7 +66,7 @@ public class StatePager extends Fragment {
         sqlDB = helper.getReadableDatabase();
         sql = "SELECT walkTime , walkDay FROM "+ helper.table;
         cur = sqlDB.rawQuery(sql, null);
-        cur.moveToLast();
+        //cur.moveToLast();
 
         if(cur !=null && cur.moveToLast()){
             int tt = cur.getInt(0);
@@ -89,7 +90,7 @@ public class StatePager extends Fragment {
 
         //**********chart에 쓸 날짜, 시간 SQLite에서 가져오기
         Cursor cur01;
-        String sql01 = "Select Sum(walkTime), walkDay FROM "+helper.table+" Group by walkDay Limit 7 ";
+        String sql01 = "Select Sum(walkTime), walkDay FROM "+helper.table+" Group by walkDay order by walkDay desc Limit 7 ";
         cur01 = sqlDB.rawQuery(sql01,null);
         sqlDB = helper.getReadableDatabase();
 
@@ -102,8 +103,6 @@ public class StatePager extends Fragment {
 
         String str;
         ArrayList<String> labels_day = new ArrayList<>();
-
-
 
         int i=0;
             while (cur01.moveToNext()){
@@ -123,19 +122,20 @@ public class StatePager extends Fragment {
 
         //barChart
         ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(0,testTimeArr[0]));
-        barEntries.add(new BarEntry(1,testTimeArr[1]));
-        barEntries.add(new BarEntry(2,testTimeArr[2]));
+        barEntries.add(new BarEntry(0,testTimeArr[6]));
+        barEntries.add(new BarEntry(1,testTimeArr[5]));
+        barEntries.add(new BarEntry(2,testTimeArr[4]));
         barEntries.add(new BarEntry(3,testTimeArr[3]));
-        barEntries.add(new BarEntry(4,testTimeArr[4]));
-        barEntries.add(new BarEntry(5,testTimeArr[5]));
-        barEntries.add(new BarEntry(6,testTimeArr[6]));
+        barEntries.add(new BarEntry(4,testTimeArr[2]));
+        barEntries.add(new BarEntry(5,testTimeArr[1]));
+        barEntries.add(new BarEntry(6,testTimeArr[0]));
 
         // data 설정
         BarDataSet barDataSet = new BarDataSet(barEntries,"TimeData_chart");
         barDataSet.setColors(R.drawable.signpage_bg_color);
         barDataSet.setValueTextSize(13f);
 
+        Collections.reverse(labels_day);
         // 라벨
         chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels_day));
 
