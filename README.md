@@ -11,6 +11,6 @@ HuanDog(휴앤도그)는 산책시간을 기록하고
 ![image](https://user-images.githubusercontent.com/78602757/116862783-3ad73980-ac40-11eb-9af8-724616da8699.png)
 ![image](https://user-images.githubusercontent.com/78602757/116862792-3d399380-ac40-11eb-863f-77269fd1a3f9.png)
 
-###UI
-li> RecyclerVew
-li>
+### UI
+* RecyclerVew
+* 
