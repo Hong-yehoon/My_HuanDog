@@ -2,9 +2,6 @@ package com.example.my_huandog;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
-import android.icu.text.DecimalFormat;
-import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,21 +14,14 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.google.android.material.timepicker.TimeFormat;
-
-
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
+
 
 
 public class StatePager extends Fragment {
@@ -131,7 +121,7 @@ public class StatePager extends Fragment {
         barEntries.add(new BarEntry(6,testTimeArr[0]));
 
         // data 설정
-        BarDataSet barDataSet = new BarDataSet(barEntries,"TimeData_chart");
+        BarDataSet barDataSet = new BarDataSet(barEntries,"시간(초)");
         barDataSet.setColors(R.drawable.signpage_bg_color);
         barDataSet.setValueTextSize(13f);
 
@@ -140,13 +130,14 @@ public class StatePager extends Fragment {
         chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels_day));
 
         barData = new BarData();
-
         barData.addDataSet(barDataSet);
 
         chart.setData(barData);
         chart.setPinchZoom(false);
         chart.invalidate();
 
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setTextSize(15);
         return viewGroup;
 
     }

@@ -103,13 +103,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp">
+        >
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/timeChart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="20dp"
+        android:layout_margin="10dp"
+
         >
 
     </com.github.mikephil.charting.charts.BarChart>
