@@ -13,9 +13,9 @@ HuanDog(휴앤도그)는 산책시간을 기록하고
 
 ### 주요 기능
 * CRUD 
-* 자동로그인 (SharedReperence)
+* 자동로그인 (SharedReference)
 * 시간 기록
--
+=
 ------ 기능 추가 예정 ------
 * 강아지 등록  
 * 주변 강아지들 보여주기
@@ -31,4 +31,4 @@ HuanDog(휴앤도그)는 산책시간을 기록하고
 
 ### Database
 * SQLite 
-* Firebase > Realtime Database
+* Firebase > Realtime Database , Cloud Firestore
