@@ -13,7 +13,7 @@ HuanDog(휴앤도그)는 산책시간을 기록하고
 
 ### 주요 기능
 * CRUD 
-* 자동로그인 (SharedReference)
+* 자동로그인 (Sharedeference)
 * 시간 기록
 -
 ------ 기능 추가 예정 ------
