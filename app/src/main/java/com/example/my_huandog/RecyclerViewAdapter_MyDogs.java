@@ -30,8 +30,9 @@ public class RecyclerViewAdapter_MyDogs extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public void onBindViewHolder(RecyclerViewAdapter_MyDogs.ItemViewHolder holder, int position) {
+        //String text = myDogsArrayList.get(position);
         holder.onBind(myDogsArrayList.get(position));
-
+        //holder.dogName.setText(myDogsArrayList.get());
     }
 
     @Override
@@ -43,10 +44,12 @@ public class RecyclerViewAdapter_MyDogs extends RecyclerView.Adapter<RecyclerVie
     public class ItemViewHolder extends RecyclerView.ViewHolder{
 
         TextView dogName;
+        //TextView dogAge;
 
         public ItemViewHolder( View itemView) {
             super(itemView);
             this.dogName = itemView.findViewById(R.id.myDogs_Name);
+
         }
         public void onBind(MyDogs mydogs){
             dogName.setText(mydogs.getDogName());

@@ -36,14 +36,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //각 메뉴에 해당하는 프래그먼트
         fragmentHome = new HomeFragment();
         fragmentFriends = new FriendsFragment();
         fragmentMyPage = new MyPageFragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_activity_main,fragmentHome).commit();
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
 
+        //첫 화면 지정
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_activity_main,fragmentHome).commit();
+
+        //각각의 메뉴 아이템이 선택될 때 호출 될 리스너
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

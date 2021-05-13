@@ -10,15 +10,12 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,13 +27,12 @@ public class HomeFragment extends Fragment {
 
     final List<String> tabTitle = Arrays.asList("State","Timeline");
 
-
     //Start Activity
     Switch walk, gps;
     Button go, start;
 
     Intent intent;
-    boolean walkFlag =false;
+    boolean walkFlag = false;
     boolean gpsFlag = false;
 
     @Nullable
@@ -102,7 +98,6 @@ public class HomeFragment extends Fragment {
                 startDialog.show();
             }
         });
-
 
         return viewGroup;
     }

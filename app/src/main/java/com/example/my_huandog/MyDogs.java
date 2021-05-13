@@ -1,17 +1,32 @@
 package com.example.my_huandog;
 
-import android.media.Image;
-
 public class MyDogs {
 
     private String dogImage;
     private String dogName;
-    private int dogAge;
-    private float dogWeight;
+    private String dogAge;
+    private String dogWeight;
     private String dogGender;
     private String dogSort;
-    private String dogSociety;
+    private String dogSocial;
     private String dogAddr;
+
+    public MyDogs(String dogName, String dogAge, String dogWeight, String dogGender, String dogSort, String dogSocial, String dogAddr) {
+        this.dogName = dogName;
+        this.dogAge = dogAge;
+        this.dogWeight = dogWeight;
+        this.dogGender = dogGender;
+        this.dogSort = dogSort;
+        this.dogSocial = dogSocial;
+        this.dogAddr = dogAddr;
+
+
+    }
+
+    public MyDogs (String dogName){
+        this.dogName = dogName;
+
+    }
 
 
     public String getDogImage() {
@@ -31,19 +46,19 @@ public class MyDogs {
         this.dogName = dogName;
     }
 
-    public int getDogAge() {
+    public String getDogAge() {
         return dogAge;
     }
 
-    public void setDogAge(int dogAge) {
+    public void setDogAge(String dogAge) {
         this.dogAge = dogAge;
     }
 
-    public float getDogWeight() {
+    public String getDogWeight() {
         return dogWeight;
     }
 
-    public void setDogWeight(float dogWeight) {
+    public void setDogWeight(String dogWeight) {
         this.dogWeight = dogWeight;
     }
 
@@ -64,11 +79,11 @@ public class MyDogs {
     }
 
     public String getDogSociety() {
-        return dogSociety;
+        return dogSocial;
     }
 
     public void setDogSociety(String dogSociety) {
-        this.dogSociety = dogSociety;
+        this.dogSocial = dogSociety;
     }
 
     public String getDogAddr() {

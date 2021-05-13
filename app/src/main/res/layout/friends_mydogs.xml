@@ -22,10 +22,12 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatBtn_addDog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_float_plus"
         >
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>

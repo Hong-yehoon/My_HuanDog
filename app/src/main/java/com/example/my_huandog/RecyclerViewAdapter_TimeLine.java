@@ -23,6 +23,7 @@ public class RecyclerViewAdapter_TimeLine extends RecyclerView.Adapter<RecyclerV
     }
 
     @NonNull
+
     @Override
     //뷰홀더를 생성(레이아웃 생성)
     public RecyclerViewAdapter_TimeLine.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

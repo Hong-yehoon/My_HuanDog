@@ -137,7 +137,7 @@ public class StatePager extends Fragment {
         chart.invalidate();
 
         XAxis xAxis = chart.getXAxis();
-        xAxis.setTextSize(15);
+        xAxis.setTextSize(13);
         return viewGroup;
 
     }
